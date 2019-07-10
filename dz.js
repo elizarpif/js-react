@@ -89,7 +89,7 @@ function parse(data) {
     let values = data.replace(/\(/g, "+")
         .replace(/\)/g, "+").replace(/\,/g, "+").replace(/ /g, "+")
         .replace(/\+{2}/g, "+").replace(/\+$/, "").split("+");
-    console.log(values)
+    //console.log(values)
     let points = [],
         i = 0;
     for (i; i < values.length - 1; i += 3) {
