@@ -1,0 +1,45 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #575757;
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+
+.inp {
+    border: 2px solid #1a110c;
+    height: 20px;
+    width: 240px;
+    font-family: FrizQuadrataC;
+}
+
+.label {
+    margin: 2%;
+    text-shadow: -1px 1px 2px #000000, 1px -1px 2px #000000, -1px -1px 2px #000000, 1px 1px 2px #000000;
+}
+
+.button {
+    border-radius: 5px;
+    font-family: FrizQuadrataC;
+    background-color: rgb(96, 67, 177);
+    color: rgb(245, 248, 244);
+    font-size: 16px;
+    border: 2px solid #1a110c;
+    height: 28px;
+    width: 240px;
+}
+
+.button:hover {
+    background-color: rgb(121, 218, 170);
+}
+
+button:active {
+    background-color: rgb(148, 60, 69);
+}
