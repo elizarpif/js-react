@@ -36,26 +36,43 @@ Py = masCoord.sort((a, b) => { return a.y > b.y });
 
 let isX = true;
 
+class Distance {
+    constructor(len, name) {
+        this.len = len;
+        this.name = name;
+    }
+    Min(k) {
+        if (k.len > this.len)
+            return this;
+        else
+            return k;
+    }
+    print() {
+        console.log(this.name + " " + this.len);
+    }
+}
+
 function min_len(mas) {
 
     let middle = Math.round(mas.length / 2),
         dl, dr, delta;
     //нашли середину
     if (middle == 1 && mas.length > 1) {
-        return Math.pow(mas[0].getC(isX) - mas[1].getC(isX), 2) +
-            Math.pow(mas[0].getC(!isX) - mas[1].getC(!isX), 2);
+        return new Distance(Math.pow(mas[0].getC(isX) - mas[1].getC(isX), 2) +
+            Math.pow(mas[0].getC(!isX) - mas[1].getC(!isX), 2), mas[0].getName() + mas[1].getName());
     }
     if (mas.length - middle == 1) {
         dl = min_len(mas.slice(0, middle));
-        dr = Math.pow(mas[1].getC(isX) - mas[2].getC(isX), 2) +
-            Math.pow(mas[1].getC(!isX) - mas[2].getC(!isX), 2);
-
-        return Math.min(dr, dl);
+        dr = new Distance(Math.pow(mas[1].getC(isX) - mas[2].getC(isX), 2) +
+            Math.pow(mas[1].getC(!isX) - mas[2].getC(!isX), 2), mas[1].getName() + mas[2].getName());
+        return dl.Min(dr);
     }
     dr = min_len(mas.slice(middle, mas.length));
     dl = min_len(mas.slice(0, middle));
     delta = min_len(mas.slice(middle - 1, middle + 1));
-    return Math.min(dl, dr, delta);
+
+    dl = dl.Min(dr);
+    return dl.Min(delta);
 
 }
 dl = min_len(Px);
@@ -63,15 +80,15 @@ isX = false;
 
 dr = min_len(Py);
 
-delta = Math.min(dl, dr);
+delta = dl.Min(dr);
 
-console.log(delta);
+dl.print();
 
 
 function parse(data) {
-    let values = data.replace(/\(/g, "-")
-        .replace(/\)/g, "-").replace(/\,/g, "-").replace(/ /g, "-")
-        .replace(/\-{2}/g, "-").replace(/\-$/, "").split("-");
+    let values = data.replace(/\(/g, "+")
+        .replace(/\)/g, "+").replace(/\,/g, "+").replace(/ /g, "+")
+        .replace(/\+{2}/g, "+").replace(/\+$/, "").split("+");
     console.log(values)
     let points = [],
         i = 0;
