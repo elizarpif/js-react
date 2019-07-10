@@ -3,43 +3,43 @@
 }
 
 .App-header {
-    background-color: #575757;
+    background-color: rgb(133, 82, 139);
+    /* rgb(121, 136, 218); */
     min-height: 100vh;
-    font-size: calc(10px + 2vmin);
-    color: white;
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: left;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
-.inp {
+.Input {
     border: 2px solid #1a110c;
     height: 20px;
-    width: 240px;
-    font-family: FrizQuadrataC;
+    width: 340px;
+    border-radius: 2px;
 }
 
-.label {
+.Label {
     margin: 2%;
-    text-shadow: -1px 1px 2px #000000, 1px -1px 2px #000000, -1px -1px 2px #000000, 1px 1px 2px #000000;
+    font-family: Comic Sans;
 }
 
-.button {
-    border-radius: 5px;
-    font-family: FrizQuadrataC;
-    background-color: rgb(96, 67, 177);
-    color: rgb(245, 248, 244);
-    font-size: 16px;
+.Button {
     border: 2px solid #1a110c;
     height: 28px;
+    font-size: 16px;
     width: 240px;
+    border-radius: 5px;
+    background-color: rgb(177, 127, 63);
+    color: white;
 }
 
-.button:hover {
-    background-color: rgb(121, 218, 170);
+.Button:hover {
+    background-color: rgb(224, 198, 110));
 }
 
-button:active {
-    background-color: rgb(148, 60, 69);
+.Button:active {
+    background-color: rgb(160, 64, 60);
 }

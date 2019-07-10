@@ -3,7 +3,7 @@ import './App.css';
 
 global.ss = "ss"
 
-class TextInput extends React.Component {
+class Input extends React.Component {
     OnTextChange = event => {
         this.props.onChange(event.target.value);
     }
@@ -11,13 +11,13 @@ class TextInput extends React.Component {
         return ( <
             div >
             <
-            label className = "label" > Тут можно что - то написать < /label> <
-            input className = "inp"
+            label className = "Label" > Напиши свой отзыв < /label> <
+            input className = "Input"
             type = "text"
             name = "myText"
             onChange = { this.OnTextChange }
-            /> <
-            /div>
+            /> < /
+            div >
         );
     }
 }
@@ -32,10 +32,10 @@ class Button extends React.Component {
         return ( <
             div >
             <
-            button className = "button"
+            button className = "Button"
             onClick = { this.OnBtnClick } >
-            Клик < /button> <
-            /div>
+            Нажми кнопку < /button> < /
+            div >
         );
     }
 }
@@ -65,10 +65,10 @@ class Parent extends React.Component {
         return ( <
             div >
             <
-            TextInput onChange = { this.handler } > < /TextInput> <
-            Button onClick = { this.ClickEvent } > < /Button> <
-            label className = "TxtLabel" > { this.state.DText } < /label> <
-            /div>
+            label className = "Label" > { this.state.DText } < /label> <
+            Input onChange = { this.handler } > < /Input> <
+            Button onClick = { this.ClickEvent } > < /Button> <   /
+            div >
         );
     }
 }
@@ -81,8 +81,8 @@ function App() {
         <
         Parent / >
         <
-        /header> <
-        /div>
+        /header> < /
+        div >
     );
 }
 
